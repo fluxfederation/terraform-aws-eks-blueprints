@@ -653,6 +653,16 @@ module "calico" {
   addon_context     = local.addon_context
 }
 
+module "kubeapps" {
+  source = "./kubeapps"
+
+  count = var.enable_kubeapps ? 1 : 0
+
+  helm_config       = var.kubeapps_helm_config
+  manage_via_gitops = var.argocd_manage_add_ons
+  addon_context     = local.addon_context
+}
+
 module "kubecost" {
   source = "./kubecost"
 

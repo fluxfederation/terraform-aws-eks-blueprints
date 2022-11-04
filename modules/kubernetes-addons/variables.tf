@@ -1210,6 +1210,19 @@ variable "calico_helm_config" {
   default     = {}
 }
 
+#-----------KubeApps ADDON-------------
+variable "enable_kubeapps" {
+  description = "Enable KubeApps add-on"
+  type        = bool
+  default     = false
+}
+
+variable "kubeapps_helm_config" {
+  description = "KubeApps Helm Chart config"
+  type        = any
+  default     = {}
+}
+
 #-----------Kubecost ADDON-------------
 variable "enable_kubecost" {
   description = "Enable Kubecost add-on"
