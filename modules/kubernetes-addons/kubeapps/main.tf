@@ -57,7 +57,7 @@ resource "kubernetes_secret_v1" "kubeapps-operator-token" {
     name = "kubeapps-operator-token"
     namespace = module.helm_addon.helm_release[0].namespace
     annotations = {
-      kubernetes.io/service-account.name = kubernetes_service_account_v1.kubeapps.metadata[0].name
+      "kubernetes.io/service-account.name" = kubernetes_service_account_v1.kubeapps.metadata[0].name
     }
   }
   type = "kubernetes.io/service-account-token"
